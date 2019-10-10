@@ -1,0 +1,2 @@
+include ':app', ':mvvm-droid'
+rootProject.name='MvvmDroid'
