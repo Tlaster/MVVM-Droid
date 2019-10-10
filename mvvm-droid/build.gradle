@@ -43,6 +43,9 @@ publish {
     userOrg = 'tlaster'
     groupId = 'moe.tlaster'
     artifactId = 'mvvm-droid'
+    repoName = "MVVM-Droid"
+    artifactId = "MVVM-Droid"
+    uploadName = "MVVM-Droid"
     publishVersion = '1.0.0'
     desc = 'Mvvm-Droid'
     website = 'https://github.com/Tlaster/MVVM-Droid'
