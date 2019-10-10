@@ -2,6 +2,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'com.novoda.bintray-release'
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
@@ -37,6 +38,16 @@ android {
         }
     }
 }
+
+publish {
+    userOrg = 'tlaster'
+    groupId = 'moe.tlaster'
+    artifactId = 'mvvm-droid'
+    publishVersion = '1.0.0'
+    desc = 'Mvvm-Droid'
+    website = 'https://github.com/Tlaster/MVVM-Droid'
+}
+
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])

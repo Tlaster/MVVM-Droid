@@ -1,0 +1,22 @@
+language: android
+android:
+  components:
+    - platform-tools  
+    - tools
+    - build-tools-29.0.2
+    - android-29
+    - extra-android-m2repository
+    - extra-google-m2repository
+    - extra-android-support
+
+before_install:
+  - chmod +x ./gradlew
+script:
+    - ./gradlew clean build
+deploy:
+  provider: script
+  script: chmod +x ./gradlew && ./gradlew bintrayUpload -PbintrayUser=BINTRAY_USERNAME -PbintrayKey=BINTRAY_KEY -PdryRun=false
+  skip_cleanup: true # to upload artifacts created during the build
+  dry-run: false
+  on:
+    branch: master
