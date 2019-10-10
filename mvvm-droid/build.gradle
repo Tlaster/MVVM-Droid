@@ -39,6 +39,11 @@ android {
     }
 }
 
+
+def user = System.getenv("BINTRAY_USERNAME")
+def key = System.getenv("BINTRAY_KEY")
+
+
 publish {
     userOrg = "tlaster"
     groupId = "moe.tlaster"
@@ -48,6 +53,9 @@ publish {
     publishVersion = '1.0.0'
     desc = 'Mvvm-Droid'
     website = 'https://github.com/Tlaster/MVVM-Droid'
+    bintrayUser = user
+    bintrayKey = key
+    dryRun = false
 }
 
 
