@@ -50,7 +50,7 @@ publish {
     repoName = "MVVM-Droid"
     uploadName = "MVVM-Droid"
     artifactId = "mvvm-droid"
-    publishVersion = '1.0.0'
+    publishVersion = '1.0.1'
     desc = 'Mvvm-Droid'
     website = 'https://github.com/Tlaster/MVVM-Droid'
     bintrayUser = user
