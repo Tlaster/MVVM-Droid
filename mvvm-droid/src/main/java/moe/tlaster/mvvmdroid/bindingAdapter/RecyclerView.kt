@@ -7,11 +7,13 @@ import moe.tlaster.mvvmdroid.recyclerView.ItemSelector
 
 
 @BindingAdapter("itemsSource", "itemTemplate", requireAll = true)
-fun <T> adapter(recyclerView: RecyclerView, list: List<T>, layoutId: Int) {
+fun <T> adapter(recyclerView: RecyclerView, list: List<T>?, layoutId: Int) {
     val onClick = recyclerView.getTag(ITEMCLICK_ID) as? (T) -> Unit
     val id = Class.forName("${recyclerView.context.applicationContext.packageName}.BR").getField("model").get(null) as Int
     recyclerView.adapter = DataBindingAdapter<T>(ItemSelector(layoutId, id)).also { adapter ->
-        adapter.items = list
+        list?.let {
+            adapter.items = list
+        }
         onClick?.let {
             adapter.onClick = it
         }
